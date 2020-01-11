@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Heganoo Geolocator</title>
-<meta name="description" content="Heganoo - Your content on a map, any place and any time!">
+<title>SG Klinik Geolocator</title>
+<meta name="description" content="SihatGusi - Your content on a map, any place and any time!">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
 <script type="text/javascript" async src="script.js"></script>
 <link type="text/css" rel="stylesheet" media="all" href="style.css">
@@ -11,5 +11,28 @@
   <header>Get Location</header>
   <h3 id="data"></h3>
   <a id="send">Send Mail</a>
+  
+  <form id='test-form'>
+  Input1: <input name='input1'><br>
+  Input2: <input name='input2'><br>
+  <input type='submit'>
+</form>
+<script>
+  var testForm = document.getElementById('test-form');
+  testForm.onsubmit = function(event) {
+    event.preventDefault();
+
+    var request = new XMLHttpRequest();
+    // POST to httpbin which returns the POST data as JSON
+    request.open('POST', 'https://httpbin.org/post', /* async = */ false);
+
+    var formData = new FormData(document.getElementById('test-form'));
+    request.send(formData);
+
+    console.log(request.response);
+  }
+</script>
+
+  
 </body>
 </html>
