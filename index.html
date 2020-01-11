@@ -10,29 +10,9 @@
 <body onload="getLocation()">
   <header>Get Location</header>
   <h3 id="data"></h3>
+  Input1: <input name='input1'><br>
   <a id="send">Send Mail</a>
   
-  <form id='test-form'>
-  Input1: <input name='input1'><br>
-  Input2: <input name='input2'><br>
-  <input type='submit'>
-</form>
-<script>
-  var testForm = document.getElementById('test-form');
-  testForm.onsubmit = function(event) {
-    event.preventDefault();
-
-    var request = new XMLHttpRequest();
-    // POST to httpbin which returns the POST data as JSON
-    request.open('POST', 'https://httpbin.org/post', /* async = */ false);
-
-    var formData = new FormData(document.getElementById('test-form'));
-    request.send(formData);
-
-    console.log(request.response);
-  }
-</script>
-
   
 </body>
 </html>
