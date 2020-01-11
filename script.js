@@ -2,11 +2,12 @@ var data = document.getElementById("data");
 data.innerHTML = "Searching ...";
 
 function showPosition(position) {
-  data.innerHTML = getContent('<br>', position, getAdd);
+  data.innerHTML = getContent('<br>', position);
+  data.innerHTML = getAdd('<br>', position);
   
 
   var send = document.getElementById("send");
-  send.setAttribute('href', 'mailto:sihatgusi@gmail.com ?subject=SUBMITTED&body= + getAdd('address')' + getContent('%0D%0A', position));
+  send.setAttribute('href', 'mailto:sihatgusi@gmail.com ?subject=SUBMITTED&body= + getAdd('Address')' + getContent('%0D%0A', position));
 }
 
 function getAdd(br, position) {
